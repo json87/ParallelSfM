@@ -62,7 +62,7 @@ jsonsfmx image_pair_matcher --database_path $database_path --ImagePairsMatching.
 
 ### 5. Parallel Reconstruction
 ```sh
-jsonsfmx distributed_mapper $output_path 
+jsonsfmx distributed_mapper
 --output_path $output_path 
 --database_path $database_path 
 --image_path $images_path 
@@ -78,7 +78,7 @@ jsonsfmx distributed_mapper $output_path
 --cluster_weight_ratio $cluster_weight_ratio 
 --max_common_3d_points $max_common_3d_points
 ```
-- ```$$output_path```: output directory of reconstruction information and results
+- ```$output_path```: output directory of reconstruction information and results
 - ```$database_path```:  Path of the db file generated in Step 1.
 - ```$images_path```:  Image directory.
 - ```$refine_fl```:  Whether to optimize focal length during the reconstruction. The default value is 1.
