@@ -11,7 +11,7 @@ You just need to install CUDA, preferably version 11.1.
 
 The scripts to run the whole process of the ParallelSfM are given:
 
-### 1. Project Generation
+### 1. Project generation
 ```sh
 jsonsfmx project_generator  --prj_name $project_name --prj_location $project_location --group_file $r3m_file 
 ```
@@ -31,7 +31,7 @@ jsonsfmx feature_extractor --prj_file $prj_r3m_file --SiftExtraction.use_gpu $us
 
 - ```$max_image_size ```:  Maximum image size, otherwise image will be down-scaled.. The default value is 3200.
 
-### 3. Codebook Generation
+### 3. Codebook generation
 
 If you already have a codebook, skip this step. The function of codebooks is to assist in image retrieval and feature matching. Codebooks can be generated from the dataset being applied or from other datasets.
 
@@ -60,7 +60,7 @@ jsonsfmx image_pair_matcher --database_path $database_path --ImagePairsMatching.
 
 - ```$match_list_path```:  The path of the retrieval results obtained in the previous step.
 
-### 6. Parallel Reconstruction
+### 6. Parallel reconstruction
 ```sh
 jsonsfmx distributed_mapper
 --output_path $output_path 
@@ -94,7 +94,7 @@ jsonsfmx distributed_mapper
 - ```$max_common_3d_points```:  The maximum number of common 3D points for cluster merging. Initial common 3D points are selected via reprojection errors. The default value of -1 means that no limit is set.
 
 
-## ChangeLog
+## Change log
 
 - 2023.12.8
   - A new clustering method, inlier_spatial, has been added. This method currently has better clustering performance.
