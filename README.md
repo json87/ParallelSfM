@@ -31,7 +31,7 @@ jsonsfmx feature_extractor --prj_file $prj_r3m_file --SiftExtraction.use_gpu $us
 
 - ```$max_image_size ```:  Maximum image size, otherwise image will be down-scaled.. The default value is 3200.
 
-### 2.5. Codebook Generation
+### 3. Codebook Generation
 
 If you already have a codebook, skip this step. The function of codebooks is to assist in image retrieval and feature matching. Codebooks can be generated from the dataset being applied or from other datasets.
 
@@ -42,7 +42,7 @@ jsonsfmx vlad_index_builder --database_path $database_path --vocab_tree_path $ou
 - ```$output_path```: Output path of codebook file. Note that the path must be specified to the file name rather than the directory where the file is located. You can set no suffix for the file.
 - ```$num_visual_words```: The number of words in the codebook. The larger the value, the higher the retrieval precision and the lower the retrieval efficiency. The default value is 256.
 
-### 3. Image retrieval
+### 4. Image retrieval
 ```sh
 jsonsfmx vlad_index_retriever --database_path $database_path --vocab_tree_path $codebook_path --output_result_path $output_path
 ```
@@ -52,7 +52,7 @@ jsonsfmx vlad_index_retriever --database_path $database_path --vocab_tree_path $
 
 - ```$output_path```:  Path of the retrieval result. Note that the path must be specified to the file name rather than the directory where the file is located. You can set no suffix for the file.
 
-### 4. Feature matching
+### 5. Feature matching
 ```sh
 jsonsfmx image_pair_matcher --database_path $database_path --ImagePairsMatching.match_list_path $match_list_path 
 ```
@@ -60,7 +60,7 @@ jsonsfmx image_pair_matcher --database_path $database_path --ImagePairsMatching.
 
 - ```$match_list_path```:  The path of the retrieval results obtained in the previous step.
 
-### 5. Parallel Reconstruction
+### 6. Parallel Reconstruction
 ```sh
 jsonsfmx distributed_mapper
 --output_path $output_path 
