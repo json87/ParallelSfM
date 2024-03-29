@@ -1,6 +1,6 @@
 # ParallelSfM
 
-Parallel Structure from Motion based on anchor-free parallel merging and it provides an efficient parallel SFM scheme, which can effectively implement the sfm of huge datasets with more than 80,000 images.
+This project implements a parallel SfM solution for sparse reconstruction of large-scale UAV images. The core ideas are a local connection-constrained edge weighting strategy for match graph construction and an anchor-free parallel merging algorithm for the merged model generation. The solution has been verified by using a dataset containing ninety thousand images over an area of 50.0 $km^2$.
 
 ![sfm-8w](https://github.com/json87/ParallelSfM/blob/main/doc/sfm-8w.png)
 
@@ -8,6 +8,9 @@ Parallel Structure from Motion based on anchor-free parallel merging and it prov
 
 You just need to install CUDA, preferably version 11.1.
 
+## Dataset
+
+The test dataset has been provided via the [Baidu NetDisk](https://pan.baidu.com/s/1R8p-7xvdLYErrwe9Z4zWYw?pwd=8hgw), and the used configuration file is in the test directory of this repo.
 
 ## Usage
 
@@ -101,4 +104,16 @@ jsonsfmx distributed_mapper
 - 2023.12.8
   - A new clustering method, inlier_spatial, has been added. This method currently has better clustering performance.
   - A new merging method, exhaus_parallel, has been added. This method has better performance for large datasets.
-  
+
+## Reference
+
+```
+@article{
+  author={Jiang, San and Li, Qingquan and Jiang, Wanshou and Chen, Wu},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={Parallel Structure From Motion for UAV Images via Weighted Connected Dominating Set}, 
+  year={2022},
+  volume={60},
+  pages={1-13}
+}
+```
