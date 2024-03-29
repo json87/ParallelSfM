@@ -4,9 +4,9 @@ This project implements a parallel SfM solution for sparse reconstruction of lar
 
 ![sfm-8w](https://github.com/json87/ParallelSfM/blob/main/doc/sfm-8w.png)
 
-## Environment
+## Build
 
-You just need to install CUDA, preferably version 11.1.
+The executable file has been provided in the bin directory.
 
 ## Dataset
 
