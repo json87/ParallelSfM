@@ -2,6 +2,8 @@
 
 Parallel Structure from Motion based on anchor-free parallel merging and it provides an efficient parallel SFM scheme, which can effectively implement the sfm of huge datasets with more than 80,000 images.
 
+![sfm-8w](https://github.com/json87/ParallelSfM/blob/main/doc/sfm-8w.png)
+
 ## Environment
 
 You just need to install CUDA, preferably version 11.1.

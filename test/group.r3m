@@ -1,0 +1,13 @@
+#R3DF
+#CUG
+#jiangsan - jiangsan@cug.edu.cn
+
+
+GROUP_START
+camera_model=BROWN
+single_camera=true
+camera_params=3694.910000, 2737.450000, 1794.800000, -0.281389, 0.119595, -0.031109, -0.000004, -0.000282
+default_focal_length_factor=1.2
+image_path=E:\dataset\campus3743\images
+GROUP_END
+
