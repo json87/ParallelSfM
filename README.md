@@ -10,7 +10,7 @@ You just need to install CUDA, preferably version 11.1.
 
 ## Dataset
 
-The test dataset has been provided via the [Baidu NetDisk](https://pan.baidu.com/s/1R8p-7xvdLYErrwe9Z4zWYw?pwd=8hgw), and the used configuration file is in the test directory of this repo.
+The test dataset has been provided via the [google driver](https://drive.google.com/file/d/1CfT2TCEbqXPGuqjsoI6Yag2v31a6hYhJ/view?usp=drive_link) and [Baidu disk](https://pan.baidu.com/s/1R8p-7xvdLYErrwe9Z4zWYw?pwd=8hgw), and the used configuration file is in the test directory of this repo.
 
 ## Usage
 
@@ -110,8 +110,8 @@ jsonsfmx distributed_mapper
 ```
 @article{
   author={Jiang, San and Li, Qingquan and Jiang, Wanshou and Chen, Wu},
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={Parallel Structure From Motion for UAV Images via Weighted Connected Dominating Set}, 
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   year={2022},
   volume={60},
   pages={1-13}
