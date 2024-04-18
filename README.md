@@ -108,12 +108,23 @@ jsonsfmx distributed_mapper
 ## Reference
 
 ```
-@article{
+@article{jiang2024efficient,
+  title={Efficient structure from motion for UAV images via anchor-free parallel merging},
+  author={Jiang, San and Ma, Yichen and Jiang, Wanshou and Li, Qingquan},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={211},
+  pages={156--170},
+  year={2024},
+  publisher={Elsevier}
+}
+
+@article{jiang2022parallel,
   author={Jiang, San and Li, Qingquan and Jiang, Wanshou and Chen, Wu},
   title={Parallel Structure From Motion for UAV Images via Weighted Connected Dominating Set}, 
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  year={2022},
   volume={60},
-  pages={1-13}
+  pages={1-13},
+  year={2022},
+  publisher={IEEE}
 }
 ```
