@@ -4,6 +4,10 @@ This project implements a parallel SfM solution for sparse reconstruction of lar
 
 ![sfm-8w](https://github.com/json87/ParallelSfM/blob/main/doc/sfm-8w.png)
 
+## NOTICE!
+
+For the current version, cameras should be calibrated and their parameters are fixed during BA since the merge step does not optimize them.
+
 ## Build
 
 The executable file has been provided in the bin directory.
