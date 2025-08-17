@@ -14,7 +14,7 @@ The executable file has been provided in the bin directory.
 
 ## Dataset
 
-The test dataset has been provided via the [google driver](https://drive.google.com/file/d/1CfT2TCEbqXPGuqjsoI6Yag2v31a6hYhJ/view?usp=drive_link) and [Baidu disk](https://pan.baidu.com/s/1R8p-7xvdLYErrwe9Z4zWYw?pwd=8hgw), and the used configuration file is in the test directory of this repo.
+The test dataset has been provided via the [google driver](https://drive.google.com/drive/folders/1t0IXWA5YQXxKyUYmjDELwSOYCB6UnLD3?usp=drive_link) and [Baidu disk](https://pan.baidu.com/s/1vUYfQQnagc2S00ZXPai8GQ?pwd=pk9p), and the used configuration file is in the test directory of this repo.
 
 ## Usage
 
@@ -45,21 +45,24 @@ jsonsfmx feature_extractor --prj_file $prj_r3m_file --SiftExtraction.use_gpu $us
 If you already have a codebook, skip this step. The function of codebooks is to assist in image retrieval and feature matching. Codebooks can be generated from the dataset being applied or from other datasets.
 
 ```sh
-jsonsfmx vlad_index_builder --database_path $database_path --vocab_tree_path $output_path --num_visual_words $num_visual_words
+jsonsfmx vlad_index_builder --database_path $database_path --vocab_tree_path $output_path --num_visual_words $num_visual_words --max_num_images $max_num_images --max_num_features $max_num_features
 ```
 - ```$database_path```: Path of the db file generated in Step 1.
 - ```$output_path```: Output path of codebook file. Note that the path must be specified to the file name rather than the directory where the file is located. You can set no suffix for the file.
 - ```$num_visual_words```: The number of words in the codebook. The larger the value, the higher the retrieval precision and the lower the retrieval efficiency. The default value is 256.
+- ```$max_num_images````: The maximum number of images used to train the codebook. The default value is -1. That is all images are used.
+- ```$max_num_features````: The maximum number of features for each image used to train the codebook. The default value is -1. That is all images are used.
 
 ### 4. Image retrieval
 ```sh
-jsonsfmx vlad_index_retriever --database_path $database_path --vocab_tree_path $codebook_path --output_result_path $output_path
+jsonsfmx vlad_index_retriever --database_path $database_path --vocab_tree_path $codebook_path --output_result_path $output_path --num_images $num_images
 ```
 - ```$database_path```: Path of the db file generated in Step 1.
 
 - ```$codebook_path```:  Path of the codebook file.
 
 - ```$output_path```:  Path of the retrieval result. Note that the path must be specified to the file name rather than the directory where the file is located. You can set no suffix for the file.
+- ```$num_images```:  The number of retrieval results for each query images. The default value is -1. That is all images are retireved.
 
 ### 5. Feature matching
 ```sh
@@ -82,9 +85,9 @@ jsonsfmx distributed_mapper
 --dump_intermediate $dump_intermediate 
 --image_overlap $image_overlap 
 --max_num_images $max_num_images 
---weight_strategy $weight_strategy 
---merge_strategy $merge_strategy 
+--weight_strategy $weight_strategy
 --cluster_weight_ratio $cluster_weight_ratio 
+--merge_strategy $merge_strategy 
 --max_common_3d_points $max_common_3d_points
 ```
 - ```$output_path```: output directory of reconstruction information and results
@@ -98,8 +101,8 @@ jsonsfmx distributed_mapper
 - ```$image_overlap```:  The number of overlapping images between two clusters. The default value is 50.
 - ```$max_num_images```:  The maximum number of images in a cluster. The default value is 500.
 - ```$weight_strategy```:  Strategies for image clustering. There are three strategies, inlier_number, inlier_overlap, inlier_spatial. Inlier_number only considers the number of matching points between all images. inlier_overlap takes into account the number of matching points between images and the overlap area. inlier_spatial only considers the number of matching points between local images. The default value is inlier_overlap.
-- ```$merge_strategy```:  Strategies for cluster merging. There are seven strategies, exhaus_untriated, exhaus_edgeweight, exhaus_parallel, global_untriated, global_3dpoint, global_alignerror, global_alltracks. The default value is exhaus_edgeweight.
 - ```$cluster_weight_ratio```:  If weight_strategy is inlier_number or inlier_spatial, set it to 0. if inlier_overlap, set it to 0.5.
+- ```$merge_strategy```:  Strategies for cluster merging. There are seven strategies, exhaus_untriated, exhaus_edgeweight, exhaus_parallel, global_untriated, global_3dpoint, global_alignerror, global_alltracks. The default value is exhaus_edgeweight.
 - ```$max_common_3d_points```:  The maximum number of common 3D points for cluster merging. Initial common 3D points are selected via reprojection errors. The default value of -1 means that no limit is set.
 
 
