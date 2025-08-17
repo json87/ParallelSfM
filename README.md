@@ -50,8 +50,8 @@ jsonsfmx vlad_index_builder --database_path $database_path --vocab_tree_path $ou
 - ```$database_path```: Path of the db file generated in Step 1.
 - ```$output_path```: Output path of codebook file. Note that the path must be specified to the file name rather than the directory where the file is located. You can set no suffix for the file.
 - ```$num_visual_words```: The number of words in the codebook. The larger the value, the higher the retrieval precision and the lower the retrieval efficiency. The default value is 256.
-- ```$max_num_images````: The maximum number of images used to train the codebook. The default value is -1. That is all images are used.
-- ```$max_num_features````: The maximum number of features for each image used to train the codebook. The default value is -1. That is all images are used.
+- ```$max_num_images```: The maximum number of images used to train the codebook. The default value is -1. That is all images are used.
+- ```$max_num_features```: The maximum number of features for each image used to train the codebook. The default value is -1. That is all images are used.
 
 ### 4. Image retrieval
 ```sh
